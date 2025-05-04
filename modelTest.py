@@ -63,14 +63,11 @@ CONST_HEIGHT = 32
 register_heif_opener()
 
 
-
-
-
 model = tf.keras.models.load_model("./model.keras")
-img_path = "./images/raw/8c/8c_1.HEIC"
+img_path = "./images/raw/7s/7s_3.HEIC"
 
 target_size = (32, 32) # Example dimensions, adjust to your model's expected input
-class_names = ['7s', '8c', '8s']  # Replace with your actual class names
+class_names = ['7s', '8c', '8s', 'ah']  # Replace with your actual class names
 
 prediction = predict_image(model, img_path, target_size)
 result = interpret_prediction(prediction, class_names)
