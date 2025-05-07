@@ -1,5 +1,7 @@
 ### Project Specific Files ###
 /images/raw/*
+## Ignore all tests text files
+*.txt
 
 ### VisualStudioCode ###
 .vscode/*      # Maybe .vscode/**/* instead - see comments
@@ -11,3 +13,4 @@
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 **/.history
+

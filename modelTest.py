@@ -35,7 +35,7 @@ def get_image_dimensions(image_path):
         return None
 
 def preprocess_image(image_path, target_size):
-  img = image.load_img(image_path, target_size=target_size)
+  img = image.load_img(image_path, target_size=target_size).convert('L')
   img_array = image.img_to_array(img)
   img_array = np.expand_dims(img_array, axis=0) # Or np.array([img_array])
   img_array /= 255. # Normalization
@@ -64,7 +64,7 @@ register_heif_opener()
 
 
 model = tf.keras.models.load_model("./model.keras")
-img_path = "./images/raw/7s/7s_3.HEIC"
+img_path = "./images/raw/8c/8c_3.HEIC"
 
 target_size = (32, 32) # Example dimensions, adjust to your model's expected input
 class_names = ['7s', '8c', '8s', 'ah']  # Replace with your actual class names
